@@ -152,7 +152,7 @@
                         {
                             $key = self::META_KEY_NAME.'-'.$level->id;
                             $name  = sprintf( '%s[%s]', $key, $item->ID );
-                            $checked = (count($item_groups) == 0 && $level->id == self::NOT_LOGGED_IN_LEVEL_ID) || in_array($level->id, $item_groups) ? "checked" : "";
+                            $checked = is_array($item_groups) && in_array($level->id, $item_groups) ? "checked" : "";
                             ?>
                             <label class="menu-item-title" style="padding-top:8px;padding-bottom:8px;">
                                <?php printf(
